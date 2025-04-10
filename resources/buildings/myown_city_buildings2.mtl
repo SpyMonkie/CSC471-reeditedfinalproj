@@ -1,0 +1,154 @@
+# Blender 4.4.0 MTL File: 'myown_city2.blend'
+# www.blender.org
+
+newmtl Buildings_11_Baked
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd uploads_files_4634223_Buildings_FBX/Buildings_11/Buildings_11_Bake1_PBR_Diffuse.png
+map_Ns uploads_files_4634223_Buildings_FBX/Buildings_11/Buildings_11_Bake1_PBR_Roughness.png
+map_refl uploads_files_4634223_Buildings_FBX/Buildings_11/Buildings_11_Bake1_PBR_Metalness.png
+map_Ke uploads_files_4634223_Buildings_FBX/Buildings_11/Buildings_11_Bake1_PBR_Emission.png
+
+newmtl Buildings_13_Baked
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd uploads_files_4634223_Buildings_FBX/Buildings_13/Buildings_13_Bake1_PBR_Diffuse.png
+map_Ns uploads_files_4634223_Buildings_FBX/Buildings_13/Buildings_13_Bake1_PBR_Roughness.png
+map_refl uploads_files_4634223_Buildings_FBX/Buildings_13/Buildings_13_Bake1_PBR_Metalness.png
+map_Ke uploads_files_4634223_Buildings_FBX/Buildings_13/Buildings_13_Bake1_PBR_Emission.png
+
+newmtl Buildings_14_Baked
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd uploads_files_4634223_Buildings_FBX/Buildings_14/Buildings_14_Bake1_PBR_Diffuse.png
+map_Ns uploads_files_4634223_Buildings_FBX/Buildings_14/Buildings_14_Bake1_PBR_Roughness.png
+map_refl uploads_files_4634223_Buildings_FBX/Buildings_14/Buildings_14_Bake1_PBR_Metalness.png
+map_Ke uploads_files_4634223_Buildings_FBX/Buildings_14/Buildings_14_Bake1_PBR_Emission.png
+
+newmtl Buildings_15_Baked
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd uploads_files_4634223_Buildings_FBX/Buildings_15/Buildings_15_Bake1_PBR_Diffuse.png
+map_Ns uploads_files_4634223_Buildings_FBX/Buildings_15/Buildings_15_Bake1_PBR_Roughness.png
+map_refl uploads_files_4634223_Buildings_FBX/Buildings_15/Buildings_15_Bake1_PBR_Metalness.png
+map_Ke uploads_files_4634223_Buildings_FBX/Buildings_15/Buildings_15_Bake1_PBR_Emission.png
+
+newmtl Buildings_16_Baked
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd uploads_files_4634223_Buildings_FBX/Buildings_16/Buildings_16_Bake1_PBR_Diffuse.png
+map_Ns uploads_files_4634223_Buildings_FBX/Buildings_16/Buildings_16_Bake1_PBR_Roughness.png
+map_refl uploads_files_4634223_Buildings_FBX/Buildings_16/Buildings_16_Bake1_PBR_Metalness.png
+map_Ke uploads_files_4634223_Buildings_FBX/Buildings_16/Buildings_16_Bake1_PBR_Emission.png
+
+newmtl Buildings_17_Baked
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd uploads_files_4634223_Buildings_FBX/Buildings_17/Buildings_17_Bake1_PBR_Diffuse.png
+map_Ns uploads_files_4634223_Buildings_FBX/Buildings_17/Buildings_17_Bake1_PBR_Roughness.png
+map_refl uploads_files_4634223_Buildings_FBX/Buildings_17/Buildings_17_Bake1_PBR_Metalness.png
+map_Ke uploads_files_4634223_Buildings_FBX/Buildings_17/Buildings_17_Bake1_PBR_Emission.png
+
+newmtl Buildings_19_Baked
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd uploads_files_4634223_Buildings_FBX/Buildings_19/Buildings_19_Bake1_PBR_Diffuse.png
+map_Ns uploads_files_4634223_Buildings_FBX/Buildings_19/Buildings_19_Bake1_PBR_Roughness.png
+map_refl uploads_files_4634223_Buildings_FBX/Buildings_19/Buildings_19_Bake1_PBR_Metalness.png
+map_Ke uploads_files_4634223_Buildings_FBX/Buildings_19/Buildings_19_Bake1_PBR_Emission.png
+
+newmtl Buildings_20_Baked
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd uploads_files_4634223_Buildings_FBX/Buildings_20/Buildings_20_Bake1_PBR_Diffuse.png
+map_Ns uploads_files_4634223_Buildings_FBX/Buildings_20/Buildings_20_Bake1_PBR_Roughness.png
+map_refl uploads_files_4634223_Buildings_FBX/Buildings_20/Buildings_20_Bake1_PBR_Metalness.png
+map_Ke uploads_files_4634223_Buildings_FBX/Buildings_20/Buildings_20_Bake1_PBR_Emission.png
+
+newmtl Buildings_24_Baked
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd uploads_files_4634223_Buildings_FBX/Buildings_24/Buildings_24_Bake1_PBR_Diffuse.png
+map_Ns uploads_files_4634223_Buildings_FBX/Buildings_24/Buildings_24_Bake1_PBR_Roughness.png
+map_refl uploads_files_4634223_Buildings_FBX/Buildings_24/Buildings_24_Bake1_PBR_Metalness.png
+map_Ke uploads_files_4634223_Buildings_FBX/Buildings_24/Buildings_24_Bake1_PBR_Emission.png
+
+newmtl Buildings_4_Baked
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd uploads_files_4634223_Buildings_FBX/Buildings_4/Buildings_4_Bake1_PBR_Diffuse.png
+map_Ns uploads_files_4634223_Buildings_FBX/Buildings_4/Buildings_4_Bake1_PBR_Roughness.png
+map_refl uploads_files_4634223_Buildings_FBX/Buildings_4/Buildings_4_Bake1_PBR_Metalness.png
+map_Ke uploads_files_4634223_Buildings_FBX/Buildings_4/Buildings_4_Bake1_PBR_Emission.png
+
+newmtl Buildings_7_Baked
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd uploads_files_4634223_Buildings_FBX/Buildings_7/Buildings_7_Bake1_PBR_Diffuse.png
+map_Ns uploads_files_4634223_Buildings_FBX/Buildings_7/Buildings_7_Bake1_PBR_Roughness.png
+map_refl uploads_files_4634223_Buildings_FBX/Buildings_7/Buildings_7_Bake1_PBR_Metalness.png
+map_Ke uploads_files_4634223_Buildings_FBX/Buildings_7/Buildings_7_Bake1_PBR_Emission.png
+
+newmtl Buildings_9_Baked
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd uploads_files_4634223_Buildings_FBX/Buildings_9/Buildings_9_Bake1_PBR_Diffuse.png
+map_Ns uploads_files_4634223_Buildings_FBX/Buildings_9/Buildings_9_Bake1_PBR_Roughness.png
+map_refl uploads_files_4634223_Buildings_FBX/Buildings_9/Buildings_9_Bake1_PBR_Metalness.png
+map_Ke uploads_files_4634223_Buildings_FBX/Buildings_9/Buildings_9_Bake1_PBR_Emission.png
+
+newmtl Material.164
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+
+newmtl Material.170
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
