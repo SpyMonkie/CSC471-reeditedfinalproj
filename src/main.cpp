@@ -343,7 +343,7 @@ public:
 		vec3 front;
 		front.x = radius * cos(phi) * cos(theta);
 		front.y = radius * sin(phi);
-		front.z = radius * cos(phi) * cos((M_PI/2) - theta);
+		front.z = radius * cos(phi) * cos((pi<float>()/2) - theta);
 
 		eye = manTrans - front;
 		lookAt = manTrans;
