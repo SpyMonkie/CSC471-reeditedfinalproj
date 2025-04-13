@@ -23,11 +23,16 @@ void AssimpModel::Draw(const std::shared_ptr<Program> prog) const {
 
 void AssimpModel::loadModel(std::string const &path) {
     Assimp::Importer importer;
+    // importer.SetPropertyBool(AI_CONFIG_IMPORT_FBX_PRESERVE_PIVOTS, false);
+    // importer.SetPropertyFloat(AI_CONFIG_GLOBAL_SCALE_FACTOR_KEY, 1.0f);
     const aiScene *scene = importer.ReadFile(path,
         aiProcess_Triangulate |
         aiProcess_GenSmoothNormals |
         aiProcess_CalcTangentSpace |
         aiProcess_ValidateDataStructure |
+        aiProcess_PopulateArmatureData |
+        // aiProcess_LimitBoneWeights |
+        // aiProcess_GlobalScale |
         aiProcess_GenBoundingBoxes);
 
     std::cout << "Loading model: " << path << std::endl;
@@ -242,6 +247,19 @@ AssimpMesh AssimpModel::processMesh(aiMesh* mesh, const aiScene* scene) {
 }
 
 void AssimpModel::SetVertexBoneData(Vertex& vertex, int boneID, float weight) {
+    // check for zero weights
+    if (weight <= 0.0f) {
+        return;
+    }
+
+    // check for duplicate bone IDs
+    for (int i = 0; i < MAX_BONE_INFLUENCE; ++i) {
+        if (vertex.m_BoneIDs[i] == boneID) {
+            return; // already set
+        }
+    }
+
+
     for (int i = 0; i < MAX_BONE_INFLUENCE; ++i) {
         if (vertex.m_BoneIDs[i] < 0) {
             vertex.m_Weights[i] = weight;
@@ -282,6 +300,19 @@ void AssimpModel::ExtractBoneWeightForVertices(std::vector<Vertex>& vertices, ai
             float weight = weights[weightIndex].mWeight;
             assert(vertexID <= vertices.size());
             SetVertexBoneData(vertices[vertexID], boneID, weight);
+        }
+    }
+
+    // normalize weights
+    for (auto& vertex : vertices) {
+        float totalWeight = 0.0f;
+        for (int i = 0; i < MAX_BONE_INFLUENCE; ++i) {
+            totalWeight += vertex.m_Weights[i];
+        }
+        if (totalWeight > 0.0f) {
+            for (int i = 0; i < MAX_BONE_INFLUENCE; ++i) {
+                vertex.m_Weights[i] /= totalWeight;
+            }
         }
     }
 

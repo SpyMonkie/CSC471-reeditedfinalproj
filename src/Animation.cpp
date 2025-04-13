@@ -10,6 +10,7 @@ Animation::Animation(const std::string& animationPath, AssimpModel* model, int a
         std::cout << "Invalid animation index: " << animationIndex << std::endl;
         return;
     }
+    std::cout << "Animation name: " << animation->mName.C_Str() << std::endl;
     m_Duration = animation->mDuration;
     m_TicksPerSecond = animation->mTicksPerSecond;
     aiMatrix4x4 globalTransformation = scene->mRootNode->mTransformation;

@@ -9,7 +9,7 @@
 
 #include "Program.h"
 
-#define MAX_BONE_INFLUENCE 8
+#define MAX_BONE_INFLUENCE 4
 
 
 struct Vertex {

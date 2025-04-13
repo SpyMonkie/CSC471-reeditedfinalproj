@@ -33,7 +33,7 @@ using namespace std;
 using namespace glm;
 
 #define NUM_LIGHTS 4
-#define MAX_BONES 100
+#define MAX_BONES 200
 
 class Application : public EventCallbacks {
 
@@ -79,7 +79,13 @@ public:
 
 	AssimpModel *cube;
 
+	AssimpModel *vampire;
+
+	AssimpModel *wolf;
+
 	AssimpModel *stickfigure_running;
+
+	AssimpModel *stickfigure_standing;
 
 	Animation *stickfigure_anim;
 
@@ -324,13 +330,13 @@ public:
 		eye = manTrans - front;
 		lookAt = manTrans;
 
-		manRot.y = theta + radians(90.0f);
+		manRot.y = theta + radians(-90.0f);
 		manRot.y = - manRot.y;
 		manRot.x = phi;
 
 		// cout << "Theta: " << theta << " Phi: " << phi << endl;
 
-		manMoveDir = -vec3(sin(manRot.y), 0, cos(manRot.y));
+		manMoveDir = vec3(sin(manRot.y), 0, cos(manRot.y));
 
 		// lookAt = eye + front;
 
@@ -539,13 +545,20 @@ public:
 		// stickfigure_anim = new Animation(resourceDirectory + "/stickfigure_anim.fbx", stickfigure_running, 0);
 		// stickfigure_animator = new Animator(stickfigure_anim);
 
-		// stickfigure_running = new AssimpModel(resourceDirectory + "/vampire/dancing_vampire.dae");
-		stickfigure_running = new AssimpModel(resourceDirectory + "/wolf.fbx");
+		// vampire = new AssimpModel(resourceDirectory + "/vampire/dancing_vampire.dae");
+		// stickfigure_running = new AssimpModel(resourceDirectory + "/wolf2.fbx");
+		stickfigure_running = new AssimpModel(resourceDirectory + "/Vanguard/Vanguard.fbx");
+		// stickfigure_running =  new AssimpModel(resourceDirectory + "/vampire/dancing_vampire.dae");
+		// stickfigure_running =  new AssimpModel(resourceDirectory + "/Walking/Walking.dae");
 
 		// cout << "gMax: x: " << stickfigure_running->boundingBoxMax.x << " y: " << stickfigure_running->boundingBoxMax.y << " z: " << stickfigure_running->boundingBoxMax.z << endl;
 		// cout << "gMin: x: " << stickfigure_running->boundingBoxMin.x << " y: " << stickfigure_running->boundingBoxMin.y << " z: " << stickfigure_running->boundingBoxMin.z << endl;
-		stickfigure_anim = new Animation(resourceDirectory + "/wolf.fbx", stickfigure_running, 0);
-		stickfigure_idle = new Animation(resourceDirectory + "/wolf.fbx", stickfigure_running, 1);
+		// stickfigure_anim = new Animation(resourceDirectory + "/wolf2.fbx", stickfigure_running, 0);
+		// stickfigure_idle = new Animation(resourceDirectory + "/wolf.fbx", stickfigure_running, 1);
+		// stickfigure_anim = new Animation(resourceDirectory + "/vampire/dancing_vampire.dae", stickfigure_running, 0);
+		// stickfigure_anim = new Animation(resourceDirectory + "/Walking/Walking.dae", stickfigure_running, 0);
+		stickfigure_anim = new Animation(resourceDirectory + "/Vanguard/Vanguard.fbx", stickfigure_running, 0);
+		stickfigure_idle = new Animation(resourceDirectory + "/Vanguard/Vanguard.fbx", stickfigure_running, 1);
 		stickfigure_animator = new Animator(stickfigure_anim);
 
 		cube = new AssimpModel(resourceDirectory + "/cube.obj");
@@ -729,7 +742,7 @@ public:
 		glBindVertexArray(GroundVertexArrayID);
 
 		// Set material for ground
-		SetMaterialMan(curS, 3);
+		SetMaterialMan(curS, 1);
 
 		// Use the matrix stack for the model matrix
 		Model->pushMatrix();
@@ -825,6 +838,9 @@ public:
 		glUniform3f(prog2->getUniform("lightPos[0]"), 0, 2, 0); // light position at the computer screen
 
 		glUniform1i(prog2->getUniform("numLights"), 1); // light position at the computer screen
+
+		// glUniform1i(prog2->getUniform("hasEmittance"), 1);
+		// glUniform3f(prog2->getUniform("MatEmitt"), 1.0, 1.0, 1.0); // white light
 		drawGround(prog2, Model);
 
 
@@ -858,8 +874,8 @@ public:
 
 
 			glUniform3f(assimptexProg->getUniform("lightColor[0]"), 1.0, 1.0, 1.0); // white light
-			glUniform1f(assimptexProg->getUniform("lightIntensity[0]"), 1.0); // light intensity
-			glUniform3f(assimptexProg->getUniform("lightPos[0]"), 0, 2, 0); // light position at the computer screen
+			glUniform1f(assimptexProg->getUniform("lightIntensity[0]"), 0.0); // light intensity
+			glUniform3f(assimptexProg->getUniform("lightPos[0]"), 0, 10, 0); // light position at the computer screen
 
 			glUniform1i(assimptexProg->getUniform("numLights"), 1); // light position at the computer screen
 
@@ -881,7 +897,7 @@ public:
 			Model->pushMatrix();
 				Model->loadIdentity();
 				Model->translate(manTrans);
-				Model->scale(0.025f);
+				Model->scale(0.01f);
 				// Model->scale(1.0f);
 				// Model->rotate(radians(90.0f), vec3(0, 1, 0));
 				Model->rotate(manRot.y, vec3(0, 1, 0));
@@ -904,6 +920,35 @@ public:
 
 
 			Model->popMatrix();
+
+			// Model->pushMatrix();
+			// 	Model->loadIdentity();
+			// 	Model->translate(vec3(0, 0, 0));
+			// 	// Model->scale(0.25f);
+			// 	Model->scale(0.01f);
+			// 	glUniform1i(assimptexProg->getUniform("hasTexture"), 0);
+			// 	setModel(assimptexProg, Model);
+			// 	stickfigure_running->Draw(assimptexProg);
+			// Model->popMatrix();
+
+			// Model->pushMatrix();
+			// 	Model->loadIdentity();
+			// 	Model->translate(vec3(0, 0, 0));
+			// 	Model->scale(0.1f);
+			// 	glUniform1i(assimptexProg->getUniform("hasTexture"), 1);
+			// 	setModel(assimptexProg, Model);
+			// 	vampire->Draw(assimptexProg);
+			// Model->popMatrix();
+
+			// Model->pushMatrix();
+			// 	Model->loadIdentity();
+			// 	Model->translate(vec3(0, 0, 0));
+			// 	Model->scale(1.0f);
+			// 	glUniform1i(assimptexProg->getUniform("hasTexture"), 0);
+			// 	SetMaterialMan(assimptexProg, 1);
+			// 	setModel(assimptexProg, Model);
+			// 	wolf->Draw(assimptexProg);
+			// Model->popMatrix();
 
 		// Model->pushMatrix();
 		// 	Model->loadIdentity();

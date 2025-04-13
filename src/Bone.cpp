@@ -47,6 +47,13 @@ Bone::Bone(const std::string& name, int ID, const aiNodeAnim* channel)
 
 void Bone::Update(float animationTime)
 {
+
+    if (m_NumPositions == 0 || m_NumRotations == 0 || m_NumScalings == 0)
+    {
+        m_LocalTransform = glm::mat4(1.0f);
+        return;
+    }
+
     glm::mat4 translation = InterpolatePosition(animationTime);
     glm::mat4 rotation = InterpolateRotation(animationTime);
     glm::mat4 scale = InterpolateScaling(animationTime);
@@ -64,7 +71,8 @@ int Bone::GetPositionIndex(float animationTime)
         }
     }
 
-    assert(0);
+    // assert(0);
+    return m_NumPositions - 1; // Return the last index if no match found
 }
 
 int Bone::GetRotationIndex(float animationTime)
@@ -77,7 +85,8 @@ int Bone::GetRotationIndex(float animationTime)
         }
     }
 
-    assert(0);
+    // assert(0);
+    return m_NumRotations - 1; // Return the last index if no match found
 }
 
 int Bone::GetScaleIndex(float animationTime)
@@ -90,7 +99,8 @@ int Bone::GetScaleIndex(float animationTime)
         }
     }
 
-    assert(0);
+    // assert(0);
+    return m_NumScalings - 1; // Return the last index if no match found
 }
 
 float Bone::GetScaleFactor(float lastTimeStamp, float nextTimeStamp, float animationTime)
